@@ -1,0 +1,62 @@
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+    table, th, td {
+        border: 1px solid #979797;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    tr:hover .hidden {
+        display: block;
+    }
+
+</style>
+
+<h1> Users Management </h1>
+
+
+<form action="/" method="post">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="surname" placeholder="Surname">
+    <input type="text" name="age" placeholder="Age">
+    <button type="submit"> Add User </button>
+</form>
+
+<h3> Total users: {{totalUsers}} </h3>
+
+<table>
+    <tr> 
+        <th> id </th>    
+        <th> name </th>    
+        <th> surname </th>    
+        <th> age </th>    
+    </tr>
+    {{#each users}}
+    <tr>
+        <td> {{id}} </td>
+        <td> {{name}} </td>
+        <td> {{surname}} </td>
+        <td> {{age}} </td>
+        <td class="hidden"> 
+            <a href="/{{id}}/delete"> Delete </a>    
+        </td>
+    </tr>
+    {{/each}}
+</table>

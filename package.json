@@ -8,6 +8,8 @@
         "@types/cors" : "2.8.13",
         "express-handlebars": "7.0.2",
         "@types/express-handlebars": "6.0.0",
-        "sqlite3": "5.1.6"
+        "sqlite3": "5.1.6",
+        "uuid": "9.0.0",
+        "@types/uuid": "9.0.1"
     }
 }

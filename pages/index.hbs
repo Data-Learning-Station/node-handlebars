@@ -1,0 +1,42 @@
+<style>
+    main {
+        background-color: white;
+        width: 60%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .post {
+        border-bottom: 1px solid #d6d6d6;
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .author {
+        color: #1d7fef;
+    }
+    .date {
+        align-self: flex-end;
+        font-size: 13px;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+
+<main>
+    <header>
+        <h1> Posts </h1>
+        <a href="/add-post"> Add Post </a>
+    </header>
+
+    {{#each posts}}
+        <div class="post">
+            <span class="author"> @{{nickname}} </span>
+            <p> {{content}} </p>
+            <span class="date"> {{date}} </span>
+            <a href="/delete/{{id}}"> Delete </a>
+        </div>
+    {{/each}}
+</main>

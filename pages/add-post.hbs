@@ -1,0 +1,22 @@
+<style>
+    main {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form {
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+</style>
+<main>
+    <form action="/new-post" method="post">
+        <input name="nickname" type="text" placeholder="Nickname">
+        <textarea name="content" placeholder="Enter your text..."></textarea>
+        <button type="submit"> Publish </button>
+    </form>
+</main>

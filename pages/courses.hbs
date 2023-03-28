@@ -1,0 +1,28 @@
+<!-- container -->
+<div class="w-8/12 mx-auto">
+
+    <!-- title -->
+    <div class="flex justify-between items-center my-10">
+        <h1 class="text-4xl font-semibold"> Courses </h1>
+        <a class="block px-3 p-2 bg-blue-500 text-white rounded" href="/course"> Add Course </a>
+    </div>
+
+    <!-- flex -->
+    <div class="flex gap-3">
+
+        {{#each courses}}
+        <!-- card -->
+            <div class="w-72 shadow p-3 ">
+                <h3 class="text-xl font-semibold"> {{id}} {{name}} </h3>
+                <span class="text-sm"> Duration: {{duration}} </span>
+                <p>
+                    {{description}}
+                </p>
+                <div class="flex justify-between items-center">
+                    <a class="p-2 text-sm text-gray-500 hover:text-red-500" href="/course/{{id}}/delete"> Delete </a>
+                    <a class="px-2 py-1 text-sm text-gray-500 hover:text-blue-500 rounded" href="/lessons/{{id}}"> Open </a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

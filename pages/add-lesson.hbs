@@ -1,0 +1,25 @@
+<!-- container -->
+<div class="w-8/12 mx-auto">
+
+    <!-- title -->
+    <div class="flex justify-between items-center my-10">
+        <h1 class="text-4xl font-semibold"> Add Lesson </h1>
+    </div>
+
+    <!-- form -->
+
+    <form class="flex flex-col gap-3" action="/add-lesson" method="post">
+
+        <input class="p-2 border border-slate-400 rounded" type="text" name="name" placeholder="Course name">
+        <input class="p-2 border border-slate-400 rounded" type="text" name="date" placeholder="Duration">
+        <select class="p-2 border border-slate-400 rounded" type="text" name="course_id" placeholder="Course">
+            {{#each courses}}
+                <option value="{{id}}"> {{name}} </option>
+            {{/each}}
+        </select>
+
+        <button class="block px-3 p-2 bg-blue-500 text-white font-semibold rounded self-end" type="submit"> 
+            Create
+        </button>
+    </form>
+</div>

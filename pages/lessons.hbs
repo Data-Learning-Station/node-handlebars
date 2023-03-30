@@ -13,7 +13,7 @@
     <!-- title -->
     <div class="flex justify-between items-center my-10">
         <h1 class="text-4xl font-semibold"> Lessons </h1>
-        <a class="block px-3 p-2 bg-blue-500 text-white rounded" href="/course"> Add Lesson </a>
+        <a class="block px-3 p-2 bg-blue-500 text-white rounded" href="/lesson"> Add Lesson </a>
     </div>
 
     <div class="flex flex-col gap-2">
@@ -25,21 +25,12 @@
 
     <!-- flex -->
     <div class="flex flex-col gap-3">
-        <div class="p-2 flex shadow rounded items-center justify-between">
-            <h3 class="font-semibold"> Lesson 1 | HTML CSS Basics </h3>
-            <span class="text-sm"> 10.04.2023 </span>
-        </div>
-        <div class="p-2 flex shadow rounded items-center justify-between">
-            <h3 class="font-semibold"> Lesson 1 | HTML CSS Basics </h3>
-            <span class="text-sm"> 10.04.2023 </span>
-        </div>
-        <div class="p-2 flex shadow rounded items-center justify-between">
-            <h3 class="font-semibold"> Lesson 1 | HTML CSS Basics </h3>
-            <span class="text-sm"> 10.04.2023 </span>
-        </div>
-        <div class="p-2 flex shadow rounded items-center justify-between">
-            <h3 class="font-semibold"> Lesson 1 | HTML CSS Basics </h3>
-            <span class="text-sm"> 10.04.2023 </span>
-        </div>
+
+        {{#each lessons}}
+            <div class="p-2 flex shadow rounded items-center justify-between">
+                <h3 class="font-semibold"> Lesson {{index}} | {{name}} </h3>
+                <span class="text-sm"> {{date}} </span>
+            </div>
+        {{/each}}
     </div>
 </div>

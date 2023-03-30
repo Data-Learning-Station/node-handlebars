@@ -47,11 +47,42 @@ server.get('/course/:id/delete', (request, response) => {
 
 server.get('/lessons/:id', (request, response) => {
     db.get('SELECT * FROM courses WHERE id = ?', [request.params.id], (error, row) => {
-        response.render('lessons', {
-            course: row
+
+        db.all('SELECT * FROM lessons WHERE course_id = ?', [request.params.id], (error, rows) => {
+
+            let lessons = rows.map((row: any, index) => ({
+                id: row.id,
+                name: row.name,
+                date: row.date,
+                index: index + 1
+            }))
+
+            response.render('lessons', {
+                course: row,
+                lessons
+            })
+        })
+    })  
+})
+
+server.get('/lesson', (request, response) => {
+    db.all('SELECT * FROM courses;', (error, rows) => {
+        response.render('add-lesson', {
+            courses: rows
         })
     })
-    
+})
+
+server.post('/add-lesson', (request, response) => {
+    const params = [
+        request.body.name,
+        request.body.date,
+        request.body.course_id,
+    ]
+
+    db.run('INSERT INTO lessons (name, date, course_id) VALUES (?, ? ,?)', params, (error) => {
+        response.redirect('/lessons/' + request.body.course_id)
+    })
 })
 
 server.listen(8080, () => console.log("Server is running on port 8080"))

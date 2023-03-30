@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+aside {
+    width: 300px;
+    min-height: 100vh;
+    background-color: #1d1d1d;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+.n-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.n-link.active {
+    border-radius: 10px;
+    background-color: rgba(240, 248, 255, 0.21);
+}

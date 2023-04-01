@@ -1,0 +1,14 @@
+<div class="h-screen flex justify-center items-center">
+    <form action="/login" method="post">
+        <div class="bg-white p-4 rounded-md shadow w-96 flex flex-col gap-3">
+            <h1 class="text-center"> Login  </h1>
+            {{#if error}}
+                <span class="bg-red-200 p-1 rounded-sm text-red-500 text-xs"> {{error}} </span>
+            {{/if}}     
+
+            <input type="text" name="username" class="border border-slate-200 rounded p-2" placeholder="Username">
+            <input type="text" name="password" class="border border-slate-200 rounded p-2" placeholder="Password">
+            <button class="p-2 bg-blue-400 rounded text-white"> Enter </button>
+        </div>
+    </form>
+</div>

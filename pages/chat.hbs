@@ -1,0 +1,24 @@
+<div class="h-screen flex flex-col">
+    <header class="bg-white shadow p-3 text-center">
+        <h1 class="text-xl"> Chat DPT </h1>
+    </header>
+
+    <div class="grow flex flex-col justify-center items-center">
+
+        <div class="flex flex-col gap-2 items-start overflow-auto bg-white w-2/3 my-5 shadow rounded p-3 grow">
+            {{#each messages}}
+            <div class="rounded-sm p-2 bg-blue-600 flex flex-col gap-1 text-white {{#if own}} bg-green-600 self-end {{/if}}">
+                <span class="font-bold"> {{username}} </span>
+                <span> {{message}} </span>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <form action="/message" method="post">
+        <div class="w-2/3 mx-auto flex gap-3">
+            <input type="text" name="message" class="border border-slate-200 rounded p-2 grow" placeholder="Message">
+            <button class="p-2 bg-blue-400 rounded text-white"> Send </button>
+        </div>
+    </form>
+</div>
